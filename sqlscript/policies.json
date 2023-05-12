@@ -1,0 +1,17 @@
+{
+	"name": "policies",
+	"properties": {
+		"content": {
+			"query": "SELECT * FROM [dbo].policies\nGo",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "dbase",
+				"poolName": "Built-in"
+			},
+			"resultLimit": -1
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "recoveries",
+	"properties": {
+		"content": {
+			"query": "SELECT * FROM [dbo].recoveries\nGo",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "dbase",
+				"poolName": "Built-in"
+			},
+			"resultLimit": -1
+		},
+		"type": "SqlQuery"
+	}
+}

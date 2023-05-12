@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 30",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [CountryName]\n,[CountryCode]\n,[RegionName]\n,[RegionCode]\n,[Jurisdiction]\n,[Date]\n,[C1_Schoolclosing]\n,[C1_Flag]\n,[C2_Workplaceclosing]\n,[C2_Flag]\n,[C3_Cancelpublicevents]\n,[C3_Flag]\n,[C4_Restrictionsongatherings]\n,[C4_Flag]\n,[C5_Closepublictransport]\n,[C5_Flag]\n,[C6_Stayathomerequirements]\n,[C6_Flag]\n,[C7_Restrictionsoninternalmovement]\n,[C7_Flag]\n,[C8_Internationaltravelcontrols]\n,[E1_Incomesupport]\n,[E1_Flag]\n,[E2_Debtcontractrelief]\n,[E3_Fiscalmeasures]\n,[E4_Internationalsupport]\n,[H1_Publicinformationcampaigns]\n,[H1_Flag]\n,[H2_Testingpolicy]\n,[H3_Contacttracing]\n,[H4_Emergencyinvestmentinhealthcare]\n,[H5_Investmentinvaccines]\n,[H6_FacialCoverings]\n,[H6_Flag]\n,[H7_Vaccinationpolicy]\n,[H7_Flag]\n,[H8_Protectionofelderlypeople]\n,[H8_Flag]\n,[M1_Wildcard]\n,[StringencyIndex]\n,[StringencyIndexForDisplay]\n,[StringencyLegacyIndex]\n,[StringencyLegacyIndexForDisplay]\n,[GovernmentResponseIndex]\n,[GovernmentResponseIndexForDisplay]\n,[ContainmentHealthIndex]\n,[ContainmentHealthIndexForDisplay]\n,[EconomicSupportIndex]\n,[EconomicSupportIndexForDisplay]\n,[id]\n,[_rid]\n,[_self]\n,[_etag]\n,[_attachments]\n,[_ts]\n FROM [dbo].[policiespart]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "dbase",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
