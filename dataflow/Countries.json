@@ -1,0 +1,75 @@
+{
+	"name": "Countries",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "SQLserverCOUNTRIES",
+						"type": "DatasetReference"
+					},
+					"name": "SQLserver"
+				},
+				{
+					"dataset": {
+						"referenceName": "AZUREsqlCOUNTRIES",
+						"type": "DatasetReference"
+					},
+					"name": "AzureSQLserver"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "containerGEOGRAPHYdatalake",
+						"type": "DatasetReference"
+					},
+					"name": "containerGEOGRAPHYdatalake"
+				}
+			],
+			"transformations": [
+				{
+					"name": "CountriesUnion"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Country as string,",
+				"          CountryCode as string,",
+				"          Latitude as decimal(10,5),",
+				"          Longitude as decimal(10,5)",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> SQLserver",
+				"source(output(",
+				"          Country as string,",
+				"          CountryCode as string,",
+				"          Latitude as decimal(10,5),",
+				"          Longitude as decimal(10,5)",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> AzureSQLserver",
+				"SQLserver, AzureSQLserver union(byName: true)~> CountriesUnion",
+				"CountriesUnion sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Country as string,",
+				"          CountryCode as string,",
+				"          Latitude as decimal(10,5),",
+				"          Longitude as decimal(10,5)",
+				"     ),",
+				"     format: 'parquet',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> containerGEOGRAPHYdatalake"
+			]
+		}
+	}
+}

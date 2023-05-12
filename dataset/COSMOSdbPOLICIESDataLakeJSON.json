@@ -1,0 +1,21 @@
+{
+	"name": "COSMOSdbPOLICIESDataLakeJSON",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "data_6c0f77c5-2b75-408c-b843-495894827191_43e4b9b8-9df1-4329-88e9-260d977bffdb.json",
+				"folderPath": "team02storagecovid19",
+				"fileSystem": "srccosmos"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

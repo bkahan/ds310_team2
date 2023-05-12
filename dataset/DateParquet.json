@@ -1,0 +1,43 @@
+{
+	"name": "DateParquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo.Dates.parquet",
+				"folderPath": "team02storagecovid19",
+				"fileSystem": "srcazuresql"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "DayOfMonth",
+				"type": "INT32"
+			},
+			{
+				"name": "MonthName",
+				"type": "UTF8"
+			},
+			{
+				"name": "CalendarYear",
+				"type": "INT32"
+			},
+			{
+				"name": "CalendarQuarter",
+				"type": "INT32"
+			},
+			{
+				"name": "DayOfYear",
+				"type": "INT32"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

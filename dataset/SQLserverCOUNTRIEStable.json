@@ -1,0 +1,17 @@
+{
+	"name": "SQLserverCOUNTRIEStable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServerTeam2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Country"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
