@@ -1,5 +1,5 @@
 {
-	"name": "Parquet28",
+	"name": "policyParquetFinal",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",

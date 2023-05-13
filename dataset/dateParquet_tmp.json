@@ -1,5 +1,5 @@
 {
-	"name": "Parquet12",
+	"name": "dateParquet_tmp",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
