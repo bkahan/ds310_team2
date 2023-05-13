@@ -293,9 +293,11 @@
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
+                            "storageAccountType": "Standard_LRS",
                             "id": "[resourceId('Microsoft.Compute/disks', concat(parameters('virtualMachines_covid19_name'), '_OsDisk_1_ff90c1cc767c4be580a143c8909e724c'))]"
                         },
-                        "deleteOption": "Detach"
+                        "deleteOption": "Detach",
+                        "diskSizeGB": 127
                     },
                     "dataDisks": [
                         {
@@ -304,9 +306,11 @@
                             "createOption": "Empty",
                             "caching": "ReadOnly",
                             "managedDisk": {
+                                "storageAccountType": "Standard_LRS",
                                 "id": "[resourceId('Microsoft.Compute/disks', concat(parameters('virtualMachines_covid19_name'), '_disk2_0852dd93865649d4979ef6d9dd9d44d5'))]"
                             },
                             "deleteOption": "Detach",
+                            "diskSizeGB": 1023,
                             "toBeDetached": false
                         }
                     ]
@@ -1684,7 +1688,7 @@
                     {
                         "name": "ipconfig1",
                         "id": "[concat(resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_covid19_NIC_name')), '/ipConfigurations/ipconfig1')]",
-                        "etag": "W/\"8b593142-6c3a-44cd-b3b9-0ca2c86d58c4\"",
+                        "etag": "W/\"208699c1-6d2d-49e8-b863-57cd07727ace\"",
                         "type": "Microsoft.Network/networkInterfaces/ipConfigurations",
                         "properties": {
                             "provisioningState": "Succeeded",
